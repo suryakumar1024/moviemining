@@ -32,4 +32,3 @@ def movie_registry(request):
             movie_obj = Movie.objects.create(name_of_movie = name_of_movie, movie_director = movie_director, movie_producer= movie_producer, movie_cast_actor = movie_cast_actor, movie_cinematography = movie_cinematography)
             return HttpResponseRedirect(reverse('index'))
     return render(request, 'movie/movie_registry.html', {'form': form, 'requester': False})
-    # return render(request, 'movie/movie_list.html', {'requester': False})
