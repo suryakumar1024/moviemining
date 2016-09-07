@@ -1,5 +1,5 @@
 from django.http import HttpResponseRedirect
-from django.shortcuts import render
+from django.shortcuts import render, get_object_or_404
 from django.core.urlresolvers import reverse
 from models import Movie, Rating
 from form import MovieDetails, UserRating
@@ -11,11 +11,13 @@ def index(request):
 
 
 def user(request):
-    return render(request, 'movie/movie_list.html', {'requester': True})
+    if request.method == 'GET':
+        return render(request,'movie/movie_list.html', {'requester': True,'movie_list' : Movie.objects.all()})
 
 
 def admin(request):
-    return render(request, 'movie/movie_list.html', {'requester': False})
+    if request.method == 'GET':
+        return render(request, 'movie/movie_list.html', {'requester': False, 'movie_list' : Movie.objects.all()})
 
 
 def movie_registry(request):
@@ -32,3 +34,14 @@ def movie_registry(request):
             movie_obj = Movie.objects.create(name_of_movie = name_of_movie, movie_director = movie_director, movie_producer= movie_producer, movie_cast_actor = movie_cast_actor, movie_cinematography = movie_cinematography)
             return HttpResponseRedirect(reverse('index'))
     return render(request, 'movie/movie_registry.html', {'form': form, 'requester': False})
+
+
+def movie_details(request, movie_id):
+    get_object_or_404(Movie, pk=movie_id)
+    # get_object_or_404(Rating, pk=movie_id)
+    movie = Movie.objects.get(pk=movie_id)
+    # ratings = Rating.objects.filter(movie_id=movie_id).values()
+    # star = Rating.objects.aggregate(Avg('user_movie_rating'))
+    # star = Rating.objects.filter(movie_id= movie_id).aggregrate(Avg('user_movie_rating'))
+    # count = ratings.count()
+    return render(request, 'movie/movie_details.html', {'movie': movie})

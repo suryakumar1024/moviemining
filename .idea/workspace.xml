@@ -2,8 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="bcff4522-065d-4088-b21f-c76457e90ad7" name="Default" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/movie/static/movie/page.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/movie/templates/movie/movie_details.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/db.sqlite3" afterPath="$PROJECT_DIR$/db.sqlite3" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/movie/templates/movie/movie_list.html" afterPath="$PROJECT_DIR$/movie/templates/movie/movie_list.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/movie/templates/movie/movie_registry.html" afterPath="$PROJECT_DIR$/movie/templates/movie/movie_registry.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/movie/urls.py" afterPath="$PROJECT_DIR$/movie/urls.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/movie/views.py" afterPath="$PROJECT_DIR$/movie/views.py" />
     </list>
@@ -36,32 +39,10 @@
         </entry>
       </file>
       <file leaf-file-name="urls.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/moviemining/urls.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="135">
-              <caret line="9" column="43" selection-start-line="9" selection-start-column="4" selection-end-line="9" selection-end-column="43" />
-              <folding>
-                <element signature="e#0#41#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="settings.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/moviemining/settings.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="465">
-              <caret line="40" column="12" selection-start-line="40" selection-start-column="12" selection-end-line="40" selection-end-column="12" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="urls.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/movie/urls.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="120">
-              <caret line="8" column="11" selection-start-line="8" selection-start-column="11" selection-end-line="8" selection-end-column="11" />
+            <state relative-caret-position="135">
+              <caret line="9" column="58" selection-start-line="9" selection-start-column="58" selection-end-line="9" selection-end-column="58" />
               <folding>
                 <element signature="e#0#32#0" expanded="true" />
               </folding>
@@ -69,13 +50,26 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="views.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="views.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/movie/views.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="330">
-              <caret line="22" column="4" selection-start-line="22" selection-start-column="4" selection-end-line="22" selection-end-column="4" />
+            <state relative-caret-position="571">
+              <caret line="46" column="70" selection-start-line="46" selection-start-column="70" selection-end-line="46" selection-end-column="70" />
               <folding>
                 <element signature="e#0#44#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="movie_details.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/movie/templates/movie/movie_details.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="210">
+              <caret line="14" column="0" selection-start-line="14" selection-start-column="0" selection-end-line="14" selection-end-column="0" />
+              <folding>
+                <element signature="n#style#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#table#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -101,11 +95,23 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="movie_list.html" pinned="false" current-in-tab="false">
+      <file leaf-file-name="movie_list.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/movie/templates/movie/movie_list.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="195">
-              <caret line="13" column="95" selection-start-line="13" selection-start-column="95" selection-end-line="13" selection-end-column="95" />
+            <state relative-caret-position="337">
+              <caret line="28" column="16" selection-start-line="28" selection-start-column="16" selection-end-line="28" selection-end-column="16" />
+              <folding>
+                <element signature="n#STYLE#0;n#h1#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="page.css" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/movie/static/movie/page.css">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="45">
+              <caret line="3" column="12" selection-start-line="3" selection-start-column="12" selection-end-line="3" selection-end-column="12" />
               <folding />
             </state>
           </provider>
@@ -153,10 +159,12 @@
         <option value="$PROJECT_DIR$/moviemining/settings.py" />
         <option value="$PROJECT_DIR$/movie/models.py" />
         <option value="$PROJECT_DIR$/movie/templates/movie/index.html" />
+        <option value="$PROJECT_DIR$/movie/templates/movie/movie_registry.html" />
+        <option value="$PROJECT_DIR$/movie/static/movie/page.css" />
+        <option value="$PROJECT_DIR$/movie/views.py" />
+        <option value="$PROJECT_DIR$/movie/templates/movie/movie_details.html" />
         <option value="$PROJECT_DIR$/movie/urls.py" />
         <option value="$PROJECT_DIR$/movie/templates/movie/movie_list.html" />
-        <option value="$PROJECT_DIR$/movie/views.py" />
-        <option value="$PROJECT_DIR$/movie/templates/movie/movie_registry.html" />
       </list>
     </option>
   </component>
@@ -246,6 +254,28 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="templates" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="movie" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="moviemining" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="moviemining" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="movie" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="static" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
@@ -509,24 +539,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/movie/templates/movie/movie_list.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="195">
-          <caret line="13" column="95" selection-start-line="13" selection-start-column="95" selection-end-line="13" selection-end-column="95" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/movie/urls.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="8" column="11" selection-start-line="8" selection-start-column="11" selection-end-line="8" selection-end-column="11" />
-          <folding>
-            <element signature="e#0#32#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/movie/templates/movie/movie_registry.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="150">
@@ -535,12 +547,51 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/movie/static/movie/page.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="45">
+          <caret line="3" column="12" selection-start-line="3" selection-start-column="12" selection-end-line="3" selection-end-column="12" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/movie/views.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="330">
-          <caret line="22" column="4" selection-start-line="22" selection-start-column="4" selection-end-line="22" selection-end-column="4" />
+        <state relative-caret-position="571">
+          <caret line="46" column="70" selection-start-line="46" selection-start-column="70" selection-end-line="46" selection-end-column="70" />
           <folding>
             <element signature="e#0#44#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/movie/templates/movie/movie_details.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="210">
+          <caret line="14" column="0" selection-start-line="14" selection-start-column="0" selection-end-line="14" selection-end-column="0" />
+          <folding>
+            <element signature="n#style#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#table#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/movie/urls.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="135">
+          <caret line="9" column="58" selection-start-line="9" selection-start-column="58" selection-end-line="9" selection-end-column="58" />
+          <folding>
+            <element signature="e#0#32#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/movie/templates/movie/movie_list.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="337">
+          <caret line="28" column="16" selection-start-line="28" selection-start-column="16" selection-end-line="28" selection-end-column="16" />
+          <folding>
+            <element signature="n#STYLE#0;n#h1#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
           </folding>
         </state>
       </provider>
