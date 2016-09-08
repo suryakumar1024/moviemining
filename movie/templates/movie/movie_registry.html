@@ -6,7 +6,8 @@
 </head>
 <body>
 
-<form action="registry" method="post">
+<form action="{% url 'registry' requester %}" method="post">
+    {{ requester }}
     {% csrf_token %}
     {{ form.as_p }}
     <input value="Submit" type="submit">
