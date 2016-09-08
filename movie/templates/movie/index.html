@@ -5,8 +5,9 @@
     <title>Title</title>
 </head>
 <body>
-<a href="{% url 'user' %}">USER</a>
-<a href="{% url 'admin' %}">ADMIN</a>
+
+<a href="{% url 'requester' user %}">USER</a>
+<a href="{% url 'requester' 'admin' %}">ADMIN</a>
 
 </body>
 </html>

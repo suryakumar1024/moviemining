@@ -12,40 +12,31 @@
 </div>
 <div class="body">
     {% csrf_token %}
-    {% if requester = True %}
+
+    {% if requester == 'AnonymousUser' %}
     <style type="text/css">
     #add_a_movie {
     display: none;
     }
-
-
     </style>
     {% endif %}
+
     <table align="center">
+
         {% for movie in movie_list %}
         <tr>
             <td>
-                {% if requester = True %}
-                <h2>{{ movie.name_of_movie }}</h2>
-                <b>Total vote: {{ movie.rating.total_vote }}<b>
-        <tr>
-            <td><input VALUE="UP Rate" id="up_rate" type="button" onclick="window.location.href=''">{{ movie.rating.up_vote_count }}
-            </td>
-            <td><input VALUE="Down Rate" id="down_rate" type="button"
-                       onclick="window.location.href=''">{{ movie.rating.down_vote_count}}</td>
-
-        </tr>
-        {% else %}
-        <a href="{% url 'details' movie.id %}">
+        <a href="{% url 'details' movie.id requester %}">
             {{ movie.name_of_movie }}
         </a>
-        {% endif %}
         </td>
         </tr>
         {% endfor %}
+
+        <tr><td><input VALUE="Add a Movie" id="add_a_movie" type="button" onclick="window.location.href='{% url 'registry' %}'"></td></tr>
     </table>
 
-    <input VALUE="Add a Movie" id="add_a_movie" type="button" onclick="window.location.href='{% url 'registry' %}'">
+
 </div>
 </body>
 </html>

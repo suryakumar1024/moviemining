@@ -7,16 +7,12 @@
 <body>
 
 <div class="movie_table" style="text-align:center;">
-    {% if requester = True %}
+    {% if requester = 'AnonymousUser' %}
     <style type="text/css">
-    #remove_movie, #update_movie, #up_rate, #down_rate {
+    #remove_movie, #update_movie{
     display: none;
     }
-
-
     </style>
-    {%else%}
-    {F}
     {% endif %}
 
     <h1>{{ movie.name_of_movie }}</h1>
@@ -42,11 +38,11 @@
         </tr>
         <tr>
             <td><b>Up Rating:</b></td>
-            <td>{{ rating.up_vote_count }}</td>
+            <td>{{ movie.rating.up_vote_count }}</td>
         </tr>
         <tr>
             <td><b>Down Rating:</b></td>
-            <td>{{ rating.down_vote_count }}</td>
+            <td>{{ movie.rating.down_vote_count }}</td>
         </tr>
         <tr>
             <td><b>Toatal Rating:</b></td>
@@ -56,6 +52,10 @@
             <td><input VALUE="Remove Movie" id="remove_movie" type="button"
                        onclick="window.location.href='{% url 'remove_movie' movie.id %}'"></td>
             <td><input VALUE="Update Movie" id="update_movie" type="button"
+                       onclick="window.location.href=''"></td>
+            <td><input VALUE="Like" id="up_vote_count" type="button"
+                       onclick="window.location.href='{% url 'remove_movie' movie.id %}'"></td>
+            <td><input VALUE="Unlike" id="down_vote_count" type="button"
                        onclick="window.location.href=''"></td>
         </tr>
     </table>
