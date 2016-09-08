@@ -1,6 +1,6 @@
 # ignore .idea directory
-.idea/	
+.idea/
 
 #ignore all .pyc files
-moviemining/*.pyc
+*.pyc
 

@@ -41,11 +41,8 @@ def movie_details(request, movie_id):
     rating_instance = get_object_or_404(Rating, pk=movie_id)
     movie = Movie.objects.get(pk=movie_id)
     ratings = Rating.objects.get(pk=movie_id)
-    total = Rating.total_vote(movie_instance)
-    # star = Rating.objects.aggregate(Avg('user_movie_rating'))
-    # star = Rating.objects.filter(movie_id= movie_id).aggregrate(Avg('user_movie_rating'))
-    # count = ratings.count()
-    return render(request, 'movie/movie_details.html', {'movie': movie, 'rating': ratings, 'total': total})
+    # total = Rating.total_vote(movie_instance)
+    return render(request, 'movie/movie_details.html', {'movie': movie, 'rating': ratings, 'total': 5})
 
 
 def remove_movie(request, movie_id):

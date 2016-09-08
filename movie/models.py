@@ -10,11 +10,14 @@ class Movie(models.Model):
     movie_cast_actor = models.CharField(max_length=100)
     movie_cinematography = models.CharField(max_length=100)
 
+    def __str__(self):
+        return self.name_of_movie
+
 
 class Rating(models.Model):
     movie = models.OneToOneField(Movie)
     up_vote_count = models.IntegerField(default=0)
     down_vote_count = models.IntegerField(default=0)
 
-    def total_vote(self,movie_id):
-        return self.up_vote_count(movie_id=movie_id) + self.down_vote_count(movie_id=movie_id)
+    def total_vote(self):
+        return self.up_vote_count + self.down_vote_count

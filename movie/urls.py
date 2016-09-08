@@ -9,4 +9,12 @@ urlpatterns = [
     url(r'^registry', views.movie_registry, name='registry'),
     url(r'^details/(?P<movie_id>[0-9]+)$', views.movie_details, name='details'),
     url(r'^remove/(?P<movie_id>[0-9]+)$', views.remove_movie, name='remove_movie'),
+
+
+
+
+
+
+    url(r'^(?P<requester>[\w\-]+)/$', views.remove_movie, name='requester_page'),
+
 ]
