@@ -7,16 +7,60 @@
 <body>
 
 <div class="movie_table" style="text-align:center;">
-        <h1>{{ movie.name_of_movie }}</h1>
+    {% if requester = True %}
+    <style type="text/css">
+    #remove_movie, #update_movie, #up_rate, #down_rate {
+    display: none;
+    }
+
+
+    </style>
+    {%else%}
+    {F}
+    {% endif %}
+
+    <h1>{{ movie.name_of_movie }}</h1>
     <table align="center" style="text-align:left;">
-        <tr><td><b>Director :</b></td><td> {{ movie.movie_director }}</td></tr>
+        <tr>
+            <td><b>Director :</b></td>
+            <td> {{ movie.movie_director }}</td>
+        </tr>
 
-        <tr><td><b>Producer :</b></td><td>{{ movie.movie_producer }}</td></tr>
+        <tr>
+            <td><b>Producer :</b></td>
+            <td>{{ movie.movie_producer }}</td>
+        </tr>
 
-        <tr><td><b>Cast :</b></td><td>{{ movie.movie_cast_actor }}</td></tr>
+        <tr>
+            <td><b>Cast :</b></td>
+            <td>{{ movie.movie_cast_actor }}</td>
+        </tr>
 
-        <tr><td><b>Cinematography:</b></td><td>{{ movie.movie_cinematography }}</td></tr>
+        <tr>
+            <td><b>Cinematography:</b></td>
+            <td>{{ movie.movie_cinematography }}</td>
+        </tr>
+        <tr>
+            <td><b>Up Rating:</b></td>
+            <td>{{ rating.up_vote_count }}</td>
+        </tr>
+        <tr>
+            <td><b>Down Rating:</b></td>
+            <td>{{ rating.down_vote_count }}</td>
+        </tr>
+        <tr>
+            <td><b>Toatal Rating:</b></td>
+            <td>{{ total }}</td>
+        </tr>
+        <tr>
+            <td><input VALUE="Remove Movie" id="remove_movie" type="button"
+                       onclick="window.location.href='{% url 'remove_movie' movie.id %}'"></td>
+            <td><input VALUE="Update Movie" id="update_movie" type="button"
+                       onclick="window.location.href=''"></td>
+        </tr>
     </table>
+
+
 </div>
 
 </body>

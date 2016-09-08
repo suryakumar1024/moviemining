@@ -18,19 +18,28 @@
     display: none;
     }
 
-    </style>
 
-    {%else%}
-    {False}
+    </style>
     {% endif %}
     <table align="center">
         {% for movie in movie_list %}
         <tr>
             <td>
-                            <a href="{% url 'details' movie.id %}">
-
-                    {{ movie.name_of_movie }}
-                </a></td>
+                {% if requester = True %}
+                <h2>{{ movie.name_of_movie }}</h2>
+                <b>Total vote:<b>
+        <tr>
+            <td><input VALUE="UP Rate" id="up_rate" type="button" onclick="window.location.href=''">{{ rating.up_vote_count}}
+            </td>
+            <td><input VALUE="Down Rate" id="down_rate" type="button"
+                       onclick="window.location.href=''">{{ rating.down_vote_count}}</td>
+        </tr>
+        {% else %}
+        <a href="{% url 'details' movie.id %}">
+            {{ movie.name_of_movie }}
+        </a>
+        {% endif %}
+        </td>
         </tr>
         {% endfor %}
     </table>
