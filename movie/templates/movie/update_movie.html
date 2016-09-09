@@ -5,12 +5,10 @@
     <title>Title</title>
 </head>
 <body>
-
-<form id="add_form" action="{% url 'registry' requester %}" method="post">
-    {{ requester }}
+<form id="update_movie" action="{% url 'update' movie_id %}" method="post">
     {% csrf_token %}
     {{ form.as_p }}
     <input value="Submit" type="submit">
-</form>
+
 </body>
 </html>

@@ -7,19 +7,17 @@
 <body>
 
 <div class="movie_table" style="text-align:center;">
-    {% if requester = 'AnonymousUser' %}
     <style type="text/css">
+    {% if requester = 'AnonymousUser' %}
     #remove_movie, #update_movie{
     display: none;
     }
-    </style>
-    <!--<script>-->
-    <!--(function(){-->
-         <!--document.getElementById("remove_movie").disabled = true;-->
-         <!--})();-->
-
-    <!--</script>-->
+    {% elif requester = 'admin'%}
+    #up_vote_count, #down_vote_count{
+    display: none;
+    }
     {% endif %}
+    </style>
 
     <h1>{{ movie.name_of_movie }}</h1>
     <table align="center" style="text-align:left;">
@@ -57,12 +55,14 @@
         <tr>
             <td><input VALUE="Remove Movie" id="remove_movie" type="button"
                        onclick="window.location.href='{% url 'remove_movie' movie.id %}'"></td>
+            <td><input VALUE="Update Movie" id="update_movie" type="button"
+                       onclick="window.location.href='{% url 'update' movie.id %}'"></td>
 
             <td><input VALUE="Like" id="up_vote_count" type="button"
-                       onclick="window.location.href='{% url 'like_movie' movie.id %}'"></td>
+                       onclick="window.location.href='{% url 'like_movie' requester movie.id %}'"></td>
 
             <td><input VALUE="Unlike" id="down_vote_count" type="button"
-                       onclick="window.location.href='{% url 'unlike_movie' movie.id %}'"></td>
+                       onclick="window.location.href='{% url 'unlike_movie' requester movie.id %}'"></td>
         </tr>
     </table>
 

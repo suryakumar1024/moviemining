@@ -26,7 +26,7 @@
         {% for movie in movie_list %}
         <tr>
             <td>
-        <a href="{% url 'details' movie.id requester %}">
+        <a href="{% url 'details' requester movie.id %}">
             {{ movie.name_of_movie }}
         </a>
         </td>
