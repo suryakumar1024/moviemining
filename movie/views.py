@@ -22,15 +22,8 @@ def movie_registry(request, requester):
         form = MovieDetails(request.POST)
         if form.is_valid():
             movie_obj = form.save()
-            # name_of_movie = form.cleaned_data['name_of_movie']
-            # movie_director = form.cleaned_data['movie_director']
-            # movie_producer = form.cleaned_data['movie_producer']
-            # movie_cast_actor = form.cleaned_data['movie_cast_actor']
-            # movie_cinematography = form.cleaned_data['movie_cinematography']
-            # movie_obj = Movie.objects.create(name_of_movie=name_of_movie, movie_director=movie_director,
-            #                                  movie_producer=movie_producer, movie_cast_actor=movie_cast_actor,
-            #                                  movie_cinematography=movie_cinematography)
             Rating.objects.create(movie=movie_obj, up_vote_count=0, down_vote_count=0)
+            return HttpResponseRedirect(reverse('index'))
 
     return render(request, 'movie/movie_registry.html', {'form': form, 'requester': requester})
 
@@ -64,22 +57,10 @@ def unlike_movie(request, requester, movie_id):
 def update_movie(request, movie_id):
     movie = get_object_or_404(Movie, pk=movie_id)
     if request.method == 'GET':
-        # data = {'name_of_movie': movie.name_of_movie, 'movie_director': movie.movie_director,
-        #         'movie_producer': movie.movie_producer, 'movie_cast_actor': movie.movie_cast_actor,
-        #         'movie_cinematography': movie.movie_cinematography}
-        # form = MovieDetails(data)
-        # a = Movie.objects.get(pk=movie_id)
         form = MovieDetails(instance=movie)
     else:
-        form = MovieDetails(request.POST)
+        form = MovieDetails(request.POST, instance=movie)
         if form.is_valid():
-            name_of_movie = form.cleaned_data['name_of_movie']
-            movie_director = form.cleaned_data['movie_director']
-            movie_producer = form.cleaned_data['movie_producer']
-            movie_cast_actor = form.cleaned_data['movie_cast_actor']
-            movie_cinematography = form.cleaned_data['movie_cinematography']
-            Movie.objects.filter(pk=movie_id).update(name_of_movie=name_of_movie, movie_director=movie_director,
-                                                     movie_producer=movie_producer, movie_cast_actor=movie_cast_actor,
-                                                     movie_cinematography=movie_cinematography)
+            form.save()
             return HttpResponseRedirect(reverse('details', kwargs={'movie_id': movie_id, 'requester': 'admin'}))
     return render(request, 'movie/update_movie.html', {'movie_id': movie_id, 'form': form})
