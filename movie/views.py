@@ -19,7 +19,8 @@ def movie_registry(request, requester):
     if request.method == 'GET':
         form = MovieDetails()
     else:
-        form = MovieDetails(request.POST)
+        import ipdb; ipdb.set_trace()
+        form = MovieDetails(request.POST, request.FILES)
         if form.is_valid():
             movie_obj = form.save()
             Rating.objects.create(movie=movie_obj, up_vote_count=0, down_vote_count=0)

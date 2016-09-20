@@ -5,9 +5,9 @@
     <title>Title</title>
 </head>
 <body>
-
+{% load staticfiles %}
 <a href="{% url 'requester' user %}">USER</a>
 <a href="{% url 'requester' 'admin' %}">ADMIN</a>
-
+<img src="{% static 'movie/google.jpg' %}" alt="My image"/>
 </body>
 </html>
