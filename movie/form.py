@@ -9,7 +9,7 @@ class MovieDetails(ModelForm):
     class Meta:
         model = Movie
         fields = ['name_of_movie', 'movie_director', 'movie_producer', 'movie_cast_actor', 'movie_cinematography',
-                  'movie_image']
+                  'movie_image', 'movie_document']
         help_texts = {
             'name_of_movie': _('some useful text'),
         }

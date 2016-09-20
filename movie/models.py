@@ -9,7 +9,8 @@ class Movie(models.Model):
     movie_producer = models.CharField(max_length=100)
     movie_cast_actor = models.CharField(max_length=100)
     movie_cinematography = models.CharField(max_length=100)
-    movie_image = models.ImageField(upload_to='movie/', default = 'movie/google.jpg')
+    movie_image = models.ImageField(upload_to='movie/images', default = 'movie/google.jpg')
+    movie_document = models.FileField(upload_to='movie/documents', default='movie/nodoc.doc')
 
     def __str__(self):
         return self.name_of_movie

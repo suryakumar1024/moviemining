@@ -24,10 +24,11 @@
     <table align="center">
 
         {% for movie in movie_list %}
-        <tr>
+        <tr><td>
         <a href="{% url 'details' requester movie.id %}">
             {{ movie.name_of_movie }}
         </a>
+            </td><td>
         <img src="{{ movie.movie_image.url }}" style="height:100px; width:100px;">
             <!--<a href="{{ movie.movie_image.url }}">{{ movie.movie_image.name }}</a>-->
 
