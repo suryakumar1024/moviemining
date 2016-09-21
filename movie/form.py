@@ -1,4 +1,5 @@
 from django import forms
+from django.core.exceptions import ValidationError
 from django.forms import ModelForm, CharField
 from movie.models import Movie, Rating
 from django.utils.translation import ugettext_lazy as _
@@ -14,7 +15,7 @@ class MovieDetails(ModelForm):
             'name_of_movie': _('some useful text'),
         }
         error_messages = {
-            'name_of_movie': {'max_length': _("some useful text"),},
+            'name_of_movie': {'max_length': _("Enter max of 100 characters"),},
         }
 
     # name_of_movie = forms.CharField(max_length=100)
@@ -23,6 +24,18 @@ class MovieDetails(ModelForm):
     # movie_cast_actor = forms.CharField(max_length=100)
     # movie_cinematography = forms.CharField(max_length=100)
 
+    def clean_name_of_movie(self):
+        name = self.cleaned_data.get('name_of_movie', '')
+        try:
+            import re
+            reg = re.compile('^[a-zA-Z]+$')
+            if not reg.match(name):
+                raise forms.ValidationError('Only Alphabets are allowed to be a movie name')
+            # Movie.objects.get(name_of_movie=name)
+            # raise forms.ValidationError("Movie exist.")
+        except:
+            return name
+
 
 class UserRating(ModelForm):
     class Meta:
@@ -30,3 +43,5 @@ class UserRating(ModelForm):
         fields = ['up_vote_count', 'down_vote_count']
     # up_vote_count = forms.IntegerField()
     # down_vote_count = forms.IntegerField()
+
+

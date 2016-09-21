@@ -4,7 +4,7 @@ from django.db import models
 
 
 class Movie(models.Model):
-    name_of_movie = models.CharField(max_length=100)
+    name_of_movie = models.CharField(unique=True, max_length=100)
     movie_director = models.CharField(max_length=100)
     movie_producer = models.CharField(max_length=100)
     movie_cast_actor = models.CharField(max_length=100)
