@@ -28,13 +28,14 @@ class MovieDetails(ModelForm):
         name = self.cleaned_data.get('name_of_movie', '')
         try:
             import re
-            reg = re.compile('^[a-zA-Z]+$')
+            reg = re.compile('^\w+$')
             if not reg.match(name):
                 raise forms.ValidationError('Only Alphabets are allowed to be a movie name')
+            return name
             # Movie.objects.get(name_of_movie=name)
             # raise forms.ValidationError("Movie exist.")
         except:
-            return name
+            print 'Error'
 
 
 class UserRating(ModelForm):

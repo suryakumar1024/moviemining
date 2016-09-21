@@ -4,6 +4,8 @@ from django.core.urlresolvers import reverse
 from models import Movie, Rating
 from form import MovieDetails
 
+# movie_objects = Movie.objects.filter(data_delete=1)
+
 
 def index(request):
     return render(request, 'movie/index.html')
@@ -11,7 +13,8 @@ def index(request):
 
 def check_requester(request, requester):
     if request.method == 'GET':
-        return render(request, 'movie/movie_list.html', {'requester': requester, 'movie_list': Movie.objects.all(),
+        return render(request, 'movie/movie_list.html', {'requester': requester,
+                                                         'movie_list': Movie.objects.filter(data_delete=1),
                                                          'rating': Rating})
 
 
@@ -19,7 +22,7 @@ def movie_registry(request, requester):
     if request.method == 'GET':
         form = MovieDetails()
     else:
-        import ipdb; ipdb.set_trace()
+        # import ipdb; ipdb.set_trace()
         form = MovieDetails(request.POST, request.FILES)
         if form.is_valid():
             movie_obj = form.save()
@@ -35,8 +38,10 @@ def movie_details(request, movie_id, requester):
 
 
 def remove_movie(request, movie_id):
-    get_object_or_404(Movie, pk=movie_id).delete()
-    return render(request, 'movie/movie_list.html', {'requester': False, 'movie_list': Movie.objects.all()})
+    delete_instance = get_object_or_404(Movie, pk=movie_id)
+    delete_instance.data_delete = 0
+    delete_instance.save()
+    return render(request, 'movie/movie_list.html', {'requester': 'admin', 'movie_list': Movie.objects.filter(data_delete=1)})
 
 
 def like_movie(request, requester, movie_id):
