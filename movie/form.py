@@ -11,9 +11,9 @@ class MovieDetails(ModelForm):
         model = Movie
         fields = ['name_of_movie', 'movie_director', 'movie_producer', 'movie_cast_actor', 'movie_cinematography',
                   'movie_image', 'movie_document']
-        help_texts = {
-            'name_of_movie': _('some useful text'),
-        }
+        # help_texts = {
+        #     'name_of_movie': _('some useful text'),
+        # }
         error_messages = {
             'name_of_movie': {'max_length': _("Enter max of 100 characters"),},
         }
@@ -24,18 +24,18 @@ class MovieDetails(ModelForm):
     # movie_cast_actor = forms.CharField(max_length=100)
     # movie_cinematography = forms.CharField(max_length=100)
 
-    def clean_name_of_movie(self):
-        name = self.cleaned_data.get('name_of_movie', '')
-        try:
-            import re
-            reg = re.compile('^\w+$')
-            if not reg.match(name):
-                raise forms.ValidationError('Only Alphabets are allowed to be a movie name')
-            return name
-            # Movie.objects.get(name_of_movie=name)
-            # raise forms.ValidationError("Movie exist.")
-        except:
-            print 'Error'
+    # def clean_name_of_movie(self):
+    #     name = self.cleaned_data.get('name_of_movie', '')
+    #     try:
+    #         import re
+    #         reg = re.compile('^\w+$')
+    #         if not reg.match(name):
+    #             raise forms.ValidationError('Only Alphabets are allowed to be a movie name')
+    #         return name
+    #         # Movie.objects.get(name_of_movie=name)
+    #         # raise forms.ValidationError("Movie exist.")
+    #     except:
+    #         print 'Error'
 
 
 class UserRating(ModelForm):

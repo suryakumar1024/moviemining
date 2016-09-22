@@ -28,6 +28,7 @@
         <a href="{% url 'details' requester movie.id %}">
             {{ movie.name_of_movie }}
         </a>
+            {{ movie.id }}
             </td><td>
         <img src="{{ movie.movie_image.url }}" style="height:100px; width:100px;">
             <!--<a href="{{ movie.movie_image.url }}">{{ movie.movie_image.name }}</a>-->

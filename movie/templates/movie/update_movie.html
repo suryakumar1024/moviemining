@@ -7,6 +7,7 @@
 <body>
 <form id="update_movie" action="{% url 'update' movie_id %}" method="post"  enctype="multipart/form-data">
     {% csrf_token %}
+    {{ movie_id }}
     {{ form.as_p }}
     <input value="Submit" type="submit">
 </form>
